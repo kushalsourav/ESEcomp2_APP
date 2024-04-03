@@ -59,13 +59,6 @@ from mltu.configs import BaseModelConfigs
 import os
 from selenium import webdriver
 from PIL import Image
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-
-
-options = Options() 
-options.add_argument("--headless=new")
-options.add_argument('--disable-gpu')
 
 cropped_path = ""  # Declare cropped_path as a global variable
 
@@ -85,7 +78,7 @@ class ImageToWordModel(OnnxInferenceModel):
 
 def capture_page_screenshot(url, output_directory="captured_images", crop_params=None):
     global cropped_path  
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome()
     driver.get(url)
     driver.implicitly_wait(10)
 
