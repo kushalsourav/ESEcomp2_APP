@@ -42,7 +42,7 @@ def main():
     configs = BaseModelConfigs.load("Models/02_captcha_to_text/202404031850/configs.yaml")
     
     model = ImageToWordModel(model_path="Models/02_captcha_to_text/202404031850", char_list=configs.vocab)
-    df = pd.read_csv("Models/02_captcha_to_text/202401211802/val.csv", header=None)
+    df = pd.read_csv("Models/02_captcha_to_text/202404031850/val.csv", header=None)
     print(df)
     data = df[1]
     
