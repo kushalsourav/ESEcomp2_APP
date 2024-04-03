@@ -195,7 +195,6 @@
 # if __name__ == "__main__":
 #     main()
 
-
 import streamlit as st
 import cv2
 import numpy as np
@@ -215,7 +214,7 @@ class ImageToWordModel(OnnxInferenceModel):
         self.char_list = char_list
 
     def predict(self, image):
-        # Convert PIL Image to NumPy array
+       
         image_np = np.array(image)
         image_np = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)  # Convert RGB to BGR
         image_np = cv2.resize(image_np, self.input_shape[:2][::-1])
@@ -230,11 +229,12 @@ def generate_random_text(length=6):
     return ''.join(random.choice(characters) for _ in range(length))
 
 
-def generate_image_with_text(text, crop_size=(418, 468, 580, 517), image_size=(1000, 1000), background_color=(255, 255, 255)):
+def generate_image_with_text(text, crop_size=(418, 468, 580, 517), image_size=(1000, 1000), background_color=(255, 255, 255), font_size=30):
     image = Image.new('RGB', image_size, color=background_color)
     cropped_image = image.crop(crop_size)
     draw = ImageDraw.Draw(cropped_image)
-    font = ImageFont.load_default()  # Use default font
+    font = ImageFont.load_default() 
+    font = font.font_variant(size=font_size)  
     x_position = 10
     for char in text:
         text_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
@@ -243,7 +243,7 @@ def generate_image_with_text(text, crop_size=(418, 468, 580, 517), image_size=(1
     return cropped_image
 
 
-# Main Streamlit app
+
 def main():
     st.title("Captcha Verification")
     model_path = "Models/02_captcha_to_text/202404031850/model.onnx"
@@ -259,7 +259,7 @@ def main():
         action = st.sidebar.selectbox("Select Action", ["Generate Captcha", "Verify Captcha"])
 
         if action == "Generate Captcha":
-            # Generate and display captcha
+      
             captcha_text = generate_random_text()
             st.write("Generated Captcha Text:", captcha_text)
             captcha_image = generate_image_with_text(captcha_text)
@@ -275,6 +275,6 @@ def main():
                 prediction_text = model.predict(captcha_image)  # Convert PIL Image to NumPy array
                 st.success(f"Predicted Captcha Text: {prediction_text}")
 
-# Run the main app
+
 if __name__ == "__main__":
     main()
