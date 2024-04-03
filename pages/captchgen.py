@@ -264,8 +264,6 @@ def main():
             st.write("Generated Captcha Text:", captcha_text)
             captcha_image = generate_image_with_text(captcha_text)
             st.image(captcha_image, caption="Generated Captcha Image", use_column_width=True)
-            prediction_text = model.predict(captcha_image)  # Convert PIL Image to NumPy array
-            st.success(f"Predicted Captcha Text: {prediction_text}")
 
         elif action == "Verify Captcha":
             captcha_text = generate_random_text()
