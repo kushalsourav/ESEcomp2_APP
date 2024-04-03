@@ -1,0 +1,28 @@
+2024-04-03 18:05:10,870 - tensorflow - WARNING - From C:\Users\USER\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf2onnx\tf_loader.py:68: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2024-04-03 18:05:11,583 - tensorflow - WARNING - From C:\Users\USER\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf2onnx\tf_loader.py:72: The name tf.train.import_meta_graph is deprecated. Please use tf.compat.v1.train.import_meta_graph instead.
+
+2024-04-03 18:05:14,334 - tensorflow - WARNING - From C:\Users\USER\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+2024-04-03 18:05:33,012 - tensorflow - WARNING - Callback method `on_train_batch_end` is slow compared to the batch time (batch time: 0.4084s vs `on_train_batch_end` time: 0.5847s). Check your callbacks.
+2024-04-03 18:05:47,104 - root - INFO - Epoch 0; loss: 31.97728729248047; CER: 1.1017262935638428; WER: 1.0; val_loss: 24.99863052368164; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:05:59,293 - root - INFO - Epoch 1; loss: 25.236379623413086; CER: 1.0; WER: 1.0; val_loss: 25.028310775756836; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:06:10,410 - root - INFO - Epoch 2; loss: 25.10246467590332; CER: 1.0; WER: 1.0; val_loss: 24.920753479003906; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:06:21,826 - root - INFO - Epoch 3; loss: 25.078683853149414; CER: 1.0; WER: 1.0; val_loss: 24.95528221130371; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:06:33,983 - root - INFO - Epoch 4; loss: 25.06125259399414; CER: 1.0; WER: 1.0; val_loss: 24.870925903320312; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:06:46,049 - root - INFO - Epoch 5; loss: 25.07533073425293; CER: 1.0; WER: 1.0; val_loss: 24.864892959594727; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:06:57,498 - root - INFO - Epoch 6; loss: 25.037799835205078; CER: 1.0; WER: 1.0; val_loss: 24.829679489135742; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:07:11,307 - root - INFO - Epoch 7; loss: 24.940685272216797; CER: 1.0; WER: 1.0; val_loss: 24.56709861755371; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:07:24,896 - root - INFO - Epoch 8; loss: 24.609718322753906; CER: 1.0; WER: 1.0; val_loss: 23.31941795349121; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:07:37,970 - root - INFO - Epoch 9; loss: 24.24365997314453; CER: 1.0; WER: 1.0; val_loss: 22.927791595458984; val_CER: 1.0; val_WER: 1.0
+2024-04-03 18:07:41,603 - tf2onnx.tfonnx - INFO - Using tensorflow=2.15.0, onnx=1.16.0, tf2onnx=1.16.1/15c810
+2024-04-03 18:07:41,603 - tf2onnx.tfonnx - INFO - Using opset <onnx, 15>
+2024-04-03 18:07:41,817 - tf2onnx.tf_utils - INFO - Computed 0 values for constant folding
+2024-04-03 18:07:41,822 - tf2onnx.tf_utils - INFO - Computed 0 values for constant folding
+2024-04-03 18:07:41,828 - tf2onnx.tf_utils - INFO - Computed 0 values for constant folding
+2024-04-03 18:07:41,841 - tf2onnx.tf_utils - INFO - Computed 0 values for constant folding
+2024-04-03 18:07:41,914 - tf2onnx.tf_utils - INFO - Computed 2 values for constant folding
+2024-04-03 18:07:42,074 - tf2onnx.tfonnx - INFO - folding node using tf type=StridedSlice, name=model/bidirectional/forward_lstm/PartitionedCall/strided_slice
+2024-04-03 18:07:42,075 - tf2onnx.tfonnx - INFO - folding node using tf type=StridedSlice, name=model/bidirectional/backward_lstm/PartitionedCall/strided_slice
+2024-04-03 18:07:42,263 - tf2onnx.optimizer - INFO - Optimizing ONNX model
+2024-04-03 18:07:43,980 - tf2onnx.optimizer - INFO - After optimization: BatchNormalization -18 (18->0), Cast -4 (11->7), Concat -4 (10->6), Const -128 (194->66), Expand -3 (4->1), Gather +2 (2->4), Identity -2 (2->0), Shape -1 (4->3), Slice -1 (5->4), Squeeze -3 (5->2), Transpose -83 (87->4), Unsqueeze -14 (17->3)
