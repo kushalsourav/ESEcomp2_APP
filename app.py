@@ -62,7 +62,7 @@ from PIL import Image
 
 cropped_path = ""  # Declare cropped_path as a global variable
 
-st.title("Captcha Verification")
+st.title("Captcha Prediction")
 
 class ImageToWordModel(OnnxInferenceModel):
     def __init__(self, model_path, char_list, *args, **kwargs):
