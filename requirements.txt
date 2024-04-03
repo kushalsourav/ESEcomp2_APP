@@ -7,3 +7,5 @@ pandas
 tqdm
 plotly
 selenium
+keras
+tensorflow==2.15.0
