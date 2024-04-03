@@ -1,0 +1,9 @@
+streamlit
+opencv-python
+numpy
+Pillow
+typing
+pandas
+tqdm
+plotly
+selenium
